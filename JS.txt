@@ -1,0 +1,49 @@
+function calculateFootprint() {
+    const transportation = document.getElementById('transportation').value;
+    const energy = parseFloat(document.getElementById('energy').value);
+    const diet = parseFloat(document.getElementById('diet').value);
+    const shopping = parseFloat(document.getElementById('shopping').value);
+
+    // Example calculations; replace with actual carbon footprint algorithm
+    const transportationCO2 = calculateTransportationCO2(transportation);
+    const energyCO2 = calculateEnergyCO2(energy);
+    const dietCO2 = calculateDietCO2(diet);
+    const shoppingCO2 = calculateShoppingCO2(shopping);
+
+    const totalCO2 = transportationCO2 + energyCO2 + dietCO2 + shoppingCO2;
+
+    document.getElementById('carbonResult').textContent = totalCO2.toFixed(2) + ' kg CO2e';
+}
+
+function calculateTransportationCO2(mode) {
+    // Example values; replace with actual emission factors
+    switch (mode) {
+        case 'car':
+            return 2.5;
+        case 'public':
+            return 0.8;
+        case 'bike':
+            return 0.1;
+        case 'walk':
+            return 0.0;
+        default:
+            return 0.0;
+    }
+}
+
+function calculateEnergyCO2(kWh) {
+    // Example calculation; replace with actual algorithm
+    const emissionFactor = 0.5; // Example emission factor in kg CO2e per kWh
+    return kWh * emissionFactor;
+}
+
+function calculateDietCO2(kgCO2e) {
+    // Example calculation; replace with actual algorithm
+    return kgCO2e;
+}
+
+function calculateShoppingCO2(USD) {
+    // Example calculation; replace with actual algorithm
+    const emissionFactor = 0.01; // Example emission factor in kg CO2e per USD spent
+    return USD * emissionFactor;
+}
