@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTracker – Your Guide to a Greener Lifestyle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EcoTracker</h1>
+        <p>Your Guide to a Greener Lifestyle</p>
+    </header>
+
+    <div class="container">
+        <section id="calculator">
+            <h2>Calculate Your Carbon Footprint</h2>
+            <form id="calcForm">
+                <div class="form-group">
+                    <label for="transportation">Transportation Choices:</label>
+                    <select id="transportation" name="transportation">
+                        <option value="car">Car</option>
+                        <option value="public">Public Transport</option>
+                        <option value="bike">Bike</option>
+                        <option value="walk">Walk</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="energy">Energy Consumption (kWh/month):</label>
+                    <input type="number" id="energy" name="energy" min="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="diet">Average Daily Diet (kg CO2e):</label>
+                    <input type="number" id="diet" name="diet" min="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="shopping">Monthly Shopping Habits (USD):</label>
+                    <input type="number" id="shopping" name="shopping" min="0" step="0.01">
+                </div>
+                <button type="button" onclick="calculateFootprint()">Calculate</button>
+            </form>
+            <div id="result">
+                <h3>Your Estimated Carbon Footprint:</h3>
+                <p id="carbonResult">0 kg CO2e</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
